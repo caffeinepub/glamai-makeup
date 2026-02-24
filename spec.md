@@ -1,15 +1,14 @@
 # Specification
 
 ## Summary
-**Goal:** Build a premium makeup e-commerce website with AI-powered shade scanner, mobile-friendly interface, and WhatsApp checkout.
+**Goal:** Add a real-time search bar to the Header that filters the product grid on the Home page as the user types.
 
 **Planned changes:**
-- Create mobile-friendly interface with hamburger menu that slides in from the side
-- Implement dark/light mode toggle with moon/sun icon in header
-- Add hero section with autoplay looping video background (muted)
-- Build AI Shade Scanner feature that analyzes uploaded photos using multimodal vision to recommend makeup shades
-- Display product grid with three items (Foundation, Lip Gloss, Eyeliner) with hover effects showing 'Quick Add +' button
-- Implement slide-in cart drawer from right side with automatic total price calculation
-- Add WhatsApp checkout button (8709162269) that generates pre-filled message with cart items and total
+- Add a search input field in the Header component, positioned near the hamburger menu button
+- Lift search state so the Header search input controls the ProductGrid filter on the Home page
+- Filter the product grid in real-time as the user types, matching partial and case-insensitive product names (Foundation, Lip Gloss, Eyeliner)
+- Display a friendly "No products found" message when the search query matches no products
+- Restore all product cards when the search input is cleared
+- Style the search bar to match the existing dark/light mode theme and be responsive on mobile and desktop
 
-**User-visible outcome:** Users can browse a premium makeup website, upload a photo to get AI shade recommendations, add products to cart with smooth animations, and checkout via WhatsApp with a pre-filled order message.
+**User-visible outcome:** Users can type in the header search bar to instantly filter the product grid, seeing only matching products or a "No products found" message if nothing matches.

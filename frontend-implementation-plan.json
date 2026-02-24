@@ -1,255 +1,36 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "GlamAI Makeup - Premium E-commerce with AI Shade Scanner",
+  "title": "Add header search bar with real-time product grid filtering",
   "requirements": [
     {
-      "id": "REQ-1",
-      "summary": "Create mobile-friendly hamburger menu with smooth slide-in animation",
+      "id": "REQ-8",
+      "summary": "Add a search bar in the Header component near the hamburger menu that filters the product grid on the Home page in real-time based on user input, matching product names case-insensitively",
       "acceptanceCriteria": [
-        "Hamburger menu icon visible in header",
-        "Menu slides in from left side with smooth animation",
-        "Menu contains navigation links",
-        "Menu closes when clicking outside or on close button"
+        "A search input field is visible in the Header, near the hamburger menu button",
+        "The search bar is responsive and works on both mobile and desktop layouts",
+        "Typing 'Foundation' filters the product grid to show only the Foundation product card",
+        "Typing 'lip' (case-insensitive) filters the product grid to show only the Lip Gloss product card",
+        "Clearing the search input restores all three product cards in the grid",
+        "If the search query matches no product names, a 'No products found' message is displayed in the product grid area",
+        "The search state is shared/lifted so that the Header search input controls the ProductGrid filter on the Home page",
+        "The search bar styling is consistent with the existing dark/light mode theme"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/Header.tsx",
+          "path": "frontend/src/hooks/useSearch.ts",
           "operation": "create",
-          "description": "Create Header component with hamburger menu icon (☰) that toggles mobile navigation drawer. Include smooth slide-in animation from left side using CSS transitions or Framer Motion. Add close button and overlay that closes menu when clicked outside."
-        },
-        {
-          "path": "frontend/src/components/MobileMenu.tsx",
-          "operation": "create",
-          "description": "Create MobileMenu component that slides in from left with smooth animation. Include navigation links (Home, Products, AI Shade Scanner, Cart) and close button. Use transform translateX for slide animation."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Import and integrate Header component at the top of the application layout. Ensure header is visible across all pages."
-        },
-        {
-          "path": "frontend/src/index.css",
-          "operation": "modify",
-          "description": "Add CSS for hamburger menu animations including slide-in transitions, overlay backdrop, and mobile-responsive styles."
-        }
-      ]
-    },
-    {
-      "id": "REQ-2",
-      "summary": "Implement dark/light mode toggle with theme switching",
-      "acceptanceCriteria": [
-        "Toggle icon visible in header (moon for dark mode, sun for light mode)",
-        "Clicking toggle switches between dark and light themes",
-        "Theme change applies to entire website instantly",
-        "Theme preference persists across page reloads"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/hooks/useTheme.ts",
-          "operation": "create",
-          "description": "Create custom hook for theme management. Handle dark/light mode state, persist preference to localStorage, and provide toggle function. Initialize theme from localStorage or system preference."
-        },
-        {
-          "path": "frontend/src/components/ThemeToggle.tsx",
-          "operation": "create",
-          "description": "Create ThemeToggle component with moon (🌙) and sun (☀️) icons. Use useTheme hook to manage state. Display moon icon in light mode and sun icon in dark mode. Add smooth transition animation when toggling."
+          "description": "Create a Zustand store for managing the global search query state. Export useSearch hook that provides searchQuery string and setSearchQuery function to allow Header and ProductGrid components to share search state."
         },
         {
           "path": "frontend/src/components/Header.tsx",
           "operation": "modify",
-          "description": "Integrate ThemeToggle component in header next to hamburger menu. Position it appropriately for both mobile and desktop views."
-        },
-        {
-          "path": "frontend/tailwind.config.js",
-          "operation": "modify",
-          "description": "Enable dark mode using class strategy. Configure dark mode color palette with appropriate colors for backgrounds, text, borders, and UI elements."
-        },
-        {
-          "path": "frontend/src/index.css",
-          "operation": "modify",
-          "description": "Add global CSS variables for light and dark themes. Define color schemes, backgrounds, and text colors for both modes. Add smooth transition for theme changes."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Apply theme class to root element based on current theme state. Ensure theme applies to entire application instantly."
-        }
-      ]
-    },
-    {
-      "id": "REQ-3",
-      "summary": "Add hero section with looping video background",
-      "acceptanceCriteria": [
-        "Video plays automatically on page load",
-        "Video is muted by default",
-        "Video loops continuously",
-        "Video serves as background for hero section content"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/HeroSection.tsx",
-          "operation": "create",
-          "description": "Create HeroSection component with video background. Include HTML5 video element with autoplay, muted, loop, and playsInline attributes. Use placeholder video URL. Overlay content with brand messaging and call-to-action. Ensure video covers full hero area with object-fit cover."
-        },
-        {
-          "path": "frontend/src/pages/Home.tsx",
-          "operation": "create",
-          "description": "Create Home page component that includes HeroSection at the top, followed by product grid and other homepage content sections."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Import Home page and set it as the main landing page route. Ensure it displays immediately when the app loads."
-        },
-        {
-          "path": "frontend/src/index.css",
-          "operation": "modify",
-          "description": "Add CSS for hero section video background including full-width/height styling, overlay effects, and responsive behavior for mobile devices."
-        }
-      ]
-    },
-    {
-      "id": "REQ-4",
-      "summary": "Create AI Shade Scanner with photo upload and multimodal vision analysis",
-      "acceptanceCriteria": [
-        "File upload interface with 'Start Scan' or similar button",
-        "Displays loading state during analysis (approximately 2-3 seconds)",
-        "Backend processes uploaded image using multimodal vision capabilities",
-        "Returns personalized shade recommendation (e.g., 'Neutral Olive', 'Warm Beige')",
-        "Displays recommendation result to user with visual feedback"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/AIShadeScanner.tsx",
-          "operation": "create",
-          "description": "Create AIShadeScanner component with file upload input and 'Start Scan' button. Handle image file selection, display preview of selected image, show loading state during analysis (2-3 seconds), and display shade recommendation result. Include visual feedback with animated loader during processing. Format result display attractively with recommended shade name and description."
-        },
-        {
-          "path": "frontend/src/pages/ShadeScanner.tsx",
-          "operation": "create",
-          "description": "Create dedicated page for AI Shade Scanner feature. Include heading, instructions for users, and AIShadeScanner component. Add informational text about how the AI analyzes skin tone and provides personalized recommendations."
-        },
-        {
-          "path": "frontend/src/hooks/useShadeAnalysis.ts",
-          "operation": "create",
-          "description": "Create custom hook to handle shade analysis logic. Manage upload state, loading state, and result state. Call backend method for multimodal vision analysis. Handle errors gracefully and provide user feedback."
-        },
-        {
-          "path": "frontend/src/components/MobileMenu.tsx",
-          "operation": "modify",
-          "description": "Add 'AI Shade Scanner' navigation link to mobile menu that routes to ShadeScanner page."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Add route for ShadeScanner page at path '/shade-scanner'. Ensure route is properly registered in router configuration."
-        }
-      ]
-    },
-    {
-      "id": "REQ-5",
-      "summary": "Build product grid with three makeup products and hover effects",
-      "acceptanceCriteria": [
-        "Three product cards displayed in grid layout",
-        "Products are Foundation, Lip Gloss, and Eyeliner",
-        "On hover, product image scales up slightly",
-        "On hover, 'Quick Add +' button slides in smoothly",
-        "Products include name, price, and image",
-        "Grid is responsive on mobile devices"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/ProductCard.tsx",
-          "operation": "create",
-          "description": "Create ProductCard component displaying product image, name, and price. Implement hover effects: scale image up slightly (1.05-1.1x) and reveal 'Quick Add +' button that slides in from bottom. Use CSS transitions for smooth animations. Reference generated product images using workspace paths: frontend/public/assets/generated/foundation.dim_400x400.png, frontend/public/assets/generated/lipgloss.dim_400x400.png, frontend/public/assets/generated/eyeliner.dim_400x400.png. Make button functional to add product to cart."
+          "description": "Add a search input field positioned between the hamburger menu button and the logo. Import and use the useSearch hook to bind the input value to searchQuery and update it on change. Style the input to match the existing theme with appropriate padding, border, and dark mode support. Ensure responsive layout adjustments for mobile and desktop."
         },
         {
           "path": "frontend/src/components/ProductGrid.tsx",
-          "operation": "create",
-          "description": "Create ProductGrid component displaying three ProductCard components in responsive grid layout. Products are Foundation ($45), Lip Gloss ($28), and Eyeliner ($22). Use CSS Grid or Flexbox for layout. Ensure grid is responsive with single column on mobile and multiple columns on larger screens."
-        },
-        {
-          "path": "frontend/src/pages/Home.tsx",
           "operation": "modify",
-          "description": "Integrate ProductGrid component into Home page below HeroSection. Add section heading like 'Featured Products' or 'Shop Our Collection'."
-        },
-        {
-          "path": "frontend/src/index.css",
-          "operation": "modify",
-          "description": "Add CSS for product card hover animations including image scale transforms, button slide-in transitions, and shadow effects. Ensure smooth animations with proper timing functions."
-        }
-      ]
-    },
-    {
-      "id": "REQ-6",
-      "summary": "Implement slide-in cart drawer with automatic price calculation",
-      "acceptanceCriteria": [
-        "Cart drawer slides in from right when product is added",
-        "Displays all items in cart with name, quantity, and price",
-        "Automatically calculates and displays total price",
-        "Allows quantity adjustment for each item",
-        "Allows item removal from cart",
-        "Cart drawer can be closed by user"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/CartDrawer.tsx",
-          "operation": "create",
-          "description": "Create CartDrawer component that slides in from right side when products are added. Display list of cart items with product name, quantity controls (+/-), individual price, and remove button. Calculate and display total price automatically. Include close button and overlay. Use transform translateX for smooth slide animation."
-        },
-        {
-          "path": "frontend/src/hooks/useCart.ts",
-          "operation": "create",
-          "description": "Create custom hook for cart state management. Handle adding products, removing items, updating quantities, calculating totals, and managing cart visibility. Persist cart data to localStorage. Provide functions for all cart operations."
-        },
-        {
-          "path": "frontend/src/components/ProductCard.tsx",
-          "operation": "modify",
-          "description": "Wire 'Quick Add +' button to useCart hook. When clicked, add product to cart and automatically trigger cart drawer to slide in."
-        },
-        {
-          "path": "frontend/src/components/Header.tsx",
-          "operation": "modify",
-          "description": "Add cart icon with item count badge in header. Make icon clickable to open cart drawer. Position appropriately for both mobile and desktop views."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Integrate CartDrawer component at app level so it overlays all pages. Pass cart state and control functions from useCart hook."
-        },
-        {
-          "path": "frontend/src/index.css",
-          "operation": "modify",
-          "description": "Add CSS for cart drawer slide-in animation from right, overlay backdrop, item list styling, quantity controls, and responsive mobile layout."
-        }
-      ]
-    },
-    {
-      "id": "REQ-7",
-      "summary": "Add WhatsApp checkout with pre-filled message containing cart items and total",
-      "acceptanceCriteria": [
-        "Checkout button labeled 'Checkout via WhatsApp' in cart drawer",
-        "Clicking button generates formatted message with all cart items and prices",
-        "Message includes total bill amount",
-        "Opens WhatsApp web link (wa.me/918709162269) with pre-filled message",
-        "Message format is professional and easy to read"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/CartDrawer.tsx",
-          "operation": "modify",
-          "description": "Add 'Checkout via WhatsApp' button at bottom of cart drawer. Implement click handler that generates professional formatted message containing all cart items (name, quantity, price), total bill amount, and opens WhatsApp web link (wa.me/918709162269) with pre-filled message using URL encoding. Format message with line breaks and clear structure for readability."
-        },
-        {
-          "path": "frontend/src/utils/whatsapp.ts",
-          "operation": "create",
-          "description": "Create utility function to generate WhatsApp link with pre-filled message. Format cart items and total into professional message text. Handle URL encoding for special characters. Phone number is 918709162269 (including country code without +)."
-        },
-        {
-          "path": "frontend/src/hooks/useCart.ts",
-          "operation": "modify",
-          "description": "Add function to useCart hook that generates checkout message text from current cart items and total. Format items with names, quantities, and prices for professional presentation."
+          "description": "Import and use the useSearch hook to access searchQuery. Filter the hardcoded products array based on whether each product name includes the searchQuery (case-insensitive). If the filtered array is empty, render a centered 'No products found' message instead of the product cards. Maintain the existing grid layout and section heading."
         }
       ]
     }

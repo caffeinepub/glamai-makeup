@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 3,
-  "summary": "Premium makeup e-commerce website with mobile-friendly app-like design, dark/light mode toggle, video background hero section, AI shade scanner with photo upload and multimodal vision analysis, product grid with hover effects, slide-in cart drawer with auto-calculation, and WhatsApp checkout integration",
+  "projectStateVersion": 5,
+  "summary": "Premium makeup e-commerce website with mobile-friendly app-like design, dark/light mode toggle, video background hero section, AI shade scanner with photo upload and multimodal vision analysis, product grid with hover effects, slide-in cart drawer with auto-calculation, WhatsApp checkout integration, and a header search bar with real-time product grid filtering",
   "architectural_notes": [
     "Mobile-first responsive design with hamburger navigation",
     "Theme switching system for dark/light modes",
@@ -9,11 +9,11 @@
     "File upload system for AI shade scanner",
     "Multimodal vision API integration for shade analysis",
     "Shopping cart state management with real-time calculations",
-    "WhatsApp Web API integration using wa.me links"
+    "WhatsApp Web API integration using wa.me links",
+    "Real-time search filtering on product grid via header search input"
   ],
   "known_issues": [],
   "isFixRequest": false,
-  "imageRequirements": "## Required Images\n- Foundation product photo with neutral beige tone and elegant packaging (foundation.dim_400x400.png)\n- Lip gloss product photo with glossy pink shade in clear tube (lipgloss.dim_400x400.png)\n- Eyeliner product photo showing sleek black pencil or liquid liner (eyeliner.dim_400x400.png)\n- Premium makeup brand logo with elegant typography and cosmetic theme (logo.dim_200x200.png)",
   "existing_features": [
     {
       "id": "feature-create-a-mobile-friendly-app-like-interface-with-a-hamburger-menu-that-slides-in-smoothly-from-the-side-when-clicked",
@@ -70,6 +70,14 @@
         "REQ-7"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-add-a-search-bar-in-the-header-component-positioned-near-the-hamburger-menu-button-that-allows-users-to-type-product-names-as-the-user-types-the-product-grid-on-the-home-page-filters-in-real-time-to-show-only-matching-products-from-the-three-available-products-foundation-lip-gloss-eyeliner-the-search-is-case-insensitive-and-matches-partial-product-names-if-no-products-match-display-a-friendly-no-products-found-message-in-the-product-grid-area",
+      "title": "Add a search bar in the Header component, positioned near the hamburger menu button, that allows users to type product names. As the user types, the product grid on the Home page filters in real-time to show only matching products from the three available products (Foundation, Lip Gloss, Eyeliner). The search is case-insensitive and matches partial product names. If no products match, display a friendly 'No products found' message in the product grid area.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -112,6 +120,12 @@
     {
       "id": "AR-7",
       "summary": "WhatsApp checkout integration (8709162269) with pre-filled message",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Header search bar with real-time product name filtering (Foundation, Lip Gloss, Eyeliner) that filters the product grid on the same page",
       "reqIds": [],
       "status": "pending"
     }
