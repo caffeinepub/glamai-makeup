@@ -1,0 +1,123 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Premium makeup e-commerce website with mobile-friendly app-like design, dark/light mode toggle, video background hero section, AI shade scanner with photo upload and multimodal vision analysis, product grid with hover effects, slide-in cart drawer with auto-calculation, and WhatsApp checkout integration",
+  "architectural_notes": [
+    "Mobile-first responsive design with hamburger navigation",
+    "Theme switching system for dark/light modes",
+    "Video autoplay background with muted audio",
+    "File upload system for AI shade scanner",
+    "Multimodal vision API integration for shade analysis",
+    "Shopping cart state management with real-time calculations",
+    "WhatsApp Web API integration using wa.me links"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Foundation product photo with neutral beige tone and elegant packaging (foundation.dim_400x400.png)\n- Lip gloss product photo with glossy pink shade in clear tube (lipgloss.dim_400x400.png)\n- Eyeliner product photo showing sleek black pencil or liquid liner (eyeliner.dim_400x400.png)\n- Premium makeup brand logo with elegant typography and cosmetic theme (logo.dim_200x200.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-mobile-friendly-app-like-interface-with-a-hamburger-menu-that-slides-in-smoothly-from-the-side-when-clicked",
+      "title": "Create a mobile-friendly app-like interface with a hamburger menu (☰) that slides in smoothly from the side when clicked",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-dark-mode-and-light-mode-toggle-with-moon-sun-icon-in-the-header-that-switches-the-entire-website-theme-instantly",
+      "title": "Implement dark mode and light mode toggle with moon/sun icon (🌙/☀️) in the header that switches the entire website theme instantly",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-hero-section-with-a-looping-video-background-premium-makeup-theme-that-autoplays-without-sound",
+      "title": "Add a hero section with a looping video background (premium makeup theme) that autoplays without sound",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-an-ai-shade-scanner-feature-that-allows-users-to-upload-a-photo-file-select-and-receive-ai-powered-makeup-shade-recommendations-using-multimodal-vision-analysis",
+      "title": "Create an AI Shade Scanner feature that allows users to upload a photo (file select) and receive AI-powered makeup shade recommendations using multimodal vision analysis",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-product-grid-displaying-three-makeup-products-foundation-lip-gloss-eyeliner-with-hover-effects-that-scale-the-image-and-reveal-a-quick-add-button",
+      "title": "Build a product grid displaying three makeup products (Foundation, Lip Gloss, Eyeliner) with hover effects that scale the image and reveal a 'Quick Add +' button",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-slide-in-cart-drawer-that-appears-from-the-right-side-when-products-are-added-automatically-calculates-total-price-and-displays-all-cart-items",
+      "title": "Implement a slide-in cart drawer that appears from the right side when products are added, automatically calculates total price, and displays all cart items",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-whatsapp-checkout-functionality-with-phone-number-8709162269-that-generates-a-pre-filled-message-containing-all-cart-items-and-total-bill-opening-whatsapp-web-link-when-user-clicks-checkout-via-whatsapp",
+      "title": "Add WhatsApp checkout functionality with phone number 8709162269 that generates a pre-filled message containing all cart items and total bill, opening WhatsApp web link when user clicks 'Checkout via WhatsApp'",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Mobile-friendly app-like design with hamburger menu",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Dark/Light mode toggle with moon/sun icon",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Video background in hero section (placeholder)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "AI Shade Scanner with photo upload and multimodal vision analysis for shade recommendation",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Product grid (Foundation, Lip Gloss, Eyeliner) with hover effects and Quick Add button",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Slide-in cart drawer with automatic total price calculation",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "WhatsApp checkout integration (8709162269) with pre-filled message",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "GlamAI Makeup",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

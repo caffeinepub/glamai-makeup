@@ -1,0 +1,153 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-mobile-friendly-app-like-interface-with-a-hamburger-menu-that-slides-in-smoothly-from-the-side-when-clicked",
+      "featureTitle": "Create a mobile-friendly app-like interface with a hamburger menu (☰) that slides in smoothly from the side when clicked",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Header.tsx",
+        "frontend/src/components/MobileMenu.tsx",
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-dark-mode-and-light-mode-toggle-with-moon-sun-icon-in-the-header-that-switches-the-entire-website-theme-instantly",
+      "featureTitle": "Implement dark mode and light mode toggle with moon/sun icon (🌙/☀️) in the header that switches the entire website theme instantly",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Header.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-hero-section-with-a-looping-video-background-premium-makeup-theme-that-autoplays-without-sound",
+      "featureTitle": "Add a hero section with a looping video background (premium makeup theme) that autoplays without sound",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/HeroSection.tsx",
+        "frontend/src/index.css",
+        "frontend/src/pages/Home.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-an-ai-shade-scanner-feature-that-allows-users-to-upload-a-photo-file-select-and-receive-ai-powered-makeup-shade-recommendations-using-multimodal-vision-analysis",
+      "featureTitle": "Create an AI Shade Scanner feature that allows users to upload a photo (file select) and receive AI-powered makeup shade recommendations using multimodal vision analysis",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/AIShadeScanner.tsx",
+        "frontend/src/components/MobileMenu.tsx",
+        "frontend/src/pages/ShadeScanner.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-product-grid-displaying-three-makeup-products-foundation-lip-gloss-eyeliner-with-hover-effects-that-scale-the-image-and-reveal-a-quick-add-button",
+      "featureTitle": "Build a product grid displaying three makeup products (Foundation, Lip Gloss, Eyeliner) with hover effects that scale the image and reveal a 'Quick Add +' button",
+      "files": [
+        "frontend/src/components/ProductCard.tsx",
+        "frontend/src/components/ProductGrid.tsx",
+        "frontend/src/index.css",
+        "frontend/src/pages/Home.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-slide-in-cart-drawer-that-appears-from-the-right-side-when-products-are-added-automatically-calculates-total-price-and-displays-all-cart-items",
+      "featureTitle": "Implement a slide-in cart drawer that appears from the right side when products are added, automatically calculates total price, and displays all cart items",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/CartDrawer.tsx",
+        "frontend/src/components/Header.tsx",
+        "frontend/src/components/ProductCard.tsx",
+        "frontend/src/hooks/useCart.ts",
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-whatsapp-checkout-functionality-with-phone-number-8709162269-that-generates-a-pre-filled-message-containing-all-cart-items-and-total-bill-opening-whatsapp-web-link-when-user-clicks-checkout-via-whatsapp",
+      "featureTitle": "Add WhatsApp checkout functionality with phone number 8709162269 that generates a pre-filled message containing all cart items and total bill, opening WhatsApp web link when user clicks 'Checkout via WhatsApp'",
+      "files": [
+        "frontend/src/components/CartDrawer.tsx",
+        "frontend/src/hooks/useCart.ts",
+        "frontend/src/utils/whatsapp.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

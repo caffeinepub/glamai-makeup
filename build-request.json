@@ -1,0 +1,172 @@
+{
+  "kind": "build_request",
+  "title": "Build premium makeup e-commerce website with AI shade scanner",
+  "projectName": "GlamAI Makeup",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a mobile-friendly app-like interface with a hamburger menu (☰) that slides in smoothly from the side when clicked",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Phone par kholne se ye ek real app jaisi dikhti hai. Isme ek Hamburger Menu (☰) hai jo click karne par smoothly side se bahar aata hai"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Hamburger menu icon visible in header",
+        "Menu slides in from left side with smooth animation",
+        "Menu contains navigation links",
+        "Menu closes when clicking outside or on close button"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Implement dark mode and light mode toggle with moon/sun icon (🌙/☀️) in the header that switches the entire website theme instantly",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Upar ek Moon/Sun (🌙/☀️) icon diya gaya hai. Isko dabane se poori website ka color ek second mein Dark ya Light theme mein badal jata hai"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Toggle icon visible in header (moon for dark mode, sun for light mode)",
+        "Clicking toggle switches between dark and light themes",
+        "Theme change applies to entire website instantly",
+        "Theme preference persists across page reloads"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Add a hero section with a looping video background (premium makeup theme) that autoplays without sound",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Website kholte hi sabse upar ek premium makeup video automatically bina aawaz ke play hoti hai"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Video plays automatically on page load",
+        "Video is muted by default",
+        "Video loops continuously",
+        "Video serves as background for hero section content"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Create an AI Shade Scanner feature that allows users to upload a photo (file select) and receive AI-powered makeup shade recommendations using multimodal vision analysis",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1",
+          "msg-5"
+        ],
+        "quotes": [
+          "User apni photo upload kar sake (file select karke)",
+          "Uploaded photo ko analyze karke shade recommendation de (using built-in multimodal vision)"
+        ]
+      },
+      "acceptanceCriteria": [
+        "File upload interface with 'Start Scan' or similar button",
+        "Displays loading state during analysis (approximately 2-3 seconds)",
+        "Backend processes uploaded image using multimodal vision capabilities",
+        "Returns personalized shade recommendation (e.g., 'Neutral Olive', 'Warm Beige')",
+        "Displays recommendation result to user with visual feedback"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Build a product grid displaying three makeup products (Foundation, Lip Gloss, Eyeliner) with hover effects that scale the image and reveal a 'Quick Add +' button",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "3 products hain (Foundation, Lip Gloss, Eyeliner). Jab koi mouse unke upar le jata hai, toh photo thodi badi hoti hai aur 'Quick Add +' ka button smoothly upar aata hai"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Three product cards displayed in grid layout",
+        "Products are Foundation, Lip Gloss, and Eyeliner",
+        "On hover, product image scales up slightly",
+        "On hover, 'Quick Add +' button slides in smoothly",
+        "Products include name, price, and image",
+        "Grid is responsive on mobile devices"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Implement a slide-in cart drawer that appears from the right side when products are added, automatically calculates total price, and displays all cart items",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Product add karne par right side se ek sundar sa Cart Drawer bahar nikal kar aata hai. Ye automatically total price (math) calculate karta hai"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Cart drawer slides in from right when product is added",
+        "Displays all items in cart with name, quantity, and price",
+        "Automatically calculates and displays total price",
+        "Allows quantity adjustment for each item",
+        "Allows item removal from cart",
+        "Cart drawer can be closed by user"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Add WhatsApp checkout functionality with phone number 8709162269 that generates a pre-filled message containing all cart items and total bill, opening WhatsApp web link when user clicks 'Checkout via WhatsApp'",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1",
+          "msg-2"
+        ],
+        "quotes": [
+          "Jab user 'Checkout via WhatsApp' dabata hai, toh cart ke saare items ke naam aur total bill ka ek professional message automatically type hokar seedha aapke WhatsApp par aa jata hai",
+          "WhatsApp Integration:8709162269"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Checkout button labeled 'Checkout via WhatsApp' in cart drawer",
+        "Clicking button generates formatted message with all cart items and prices",
+        "Message includes total bill amount",
+        "Opens WhatsApp web link (wa.me/918709162269) with pre-filled message",
+        "Message format is professional and easy to read"
+      ]
+    }
+  ],
+  "constraints": [
+    "Use built-in multimodal vision capabilities for AI shade analysis, not external AI services",
+    "WhatsApp integration must use wa.me link format, not direct API integration",
+    "Video background should use placeholder/sample video content"
+  ],
+  "nonGoals": [
+    "Real-time camera access or live video feed for shade scanner",
+    "Integration with external AI services like OpenAI Vision API",
+    "Direct WhatsApp API integration",
+    "Payment gateway integration",
+    "User authentication system"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Foundation product photo with neutral beige tone and elegant packaging (foundation.dim_400x400.png)",
+      "Lip gloss product photo with glossy pink shade in clear tube (lipgloss.dim_400x400.png)",
+      "Eyeliner product photo showing sleek black pencil or liquid liner (eyeliner.dim_400x400.png)",
+      "Premium makeup brand logo with elegant typography and cosmetic theme (logo.dim_200x200.png)"
+    ],
+    "edits": []
+  }
+}

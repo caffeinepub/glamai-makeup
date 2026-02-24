@@ -1,0 +1,18 @@
+{
+  "frontend/src/App.tsx": "Main application component managing routing between Home and ShadeScanner pages, with mobile menu, cart drawer, and theme provider integration.",
+  "frontend/src/components/Header.tsx": "Sticky header component with hamburger menu toggle, logo, theme switcher (moon/sun icon), and cart icon with item count badge.",
+  "frontend/src/components/MobileMenu.tsx": "Slide-in navigation drawer from left side with smooth animations, containing navigation links for Home and AI Shade Scanner pages.",
+  "frontend/src/components/Footer.tsx": "Footer component with copyright information and attribution link to caffeine.ai with UTM tracking parameters.",
+  "frontend/src/components/HeroSection.tsx": "Hero section with autoplay looping video background, gradient overlay, and call-to-action buttons for shopping and AI scanner.",
+  "frontend/src/components/ProductCard.tsx": "Product card component with hover effects that scale image and reveal Quick Add button, integrating with cart system.",
+  "frontend/src/components/ProductGrid.tsx": "Grid layout displaying three makeup products (Foundation, Lip Gloss, Eyeliner) with responsive design.",
+  "frontend/src/components/CartDrawer.tsx": "Slide-in cart drawer from right side showing cart items, quantity controls, automatic total calculation, and WhatsApp checkout button.",
+  "frontend/src/components/AIShadeScanner.tsx": "AI shade scanner component with photo upload interface, loading state during analysis, and personalized shade recommendation display.",
+  "frontend/src/pages/Home.tsx": "Home page combining hero section, features section with icons, and product grid with smooth scroll navigation.",
+  "frontend/src/pages/ShadeScanner.tsx": "Dedicated page for AI Shade Scanner feature with instructions and how-it-works section.",
+  "frontend/src/hooks/useCart.ts": "Zustand store for cart state management with localStorage persistence, handling add/remove/update operations and total calculation.",
+  "frontend/src/utils/whatsapp.ts": "Utility function to generate WhatsApp web link with pre-filled professional message containing cart items and total.",
+  "frontend/src/index.css": "Global styles with OKLCH color system for light and dark modes, featuring pink-purple gradient theme for makeup brand aesthetic.",
+  "frontend/tailwind.config.js": "Tailwind configuration with custom color tokens, border radius, and Inter font family for premium design system.",
+  "frontend/src/hooks/useQueries.ts": "Placeholder file for React Query hooks to interact with backend (awaiting backend implementation for AI shade analysis)."
+}
